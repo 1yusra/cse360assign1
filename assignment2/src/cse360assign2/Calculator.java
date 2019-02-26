@@ -14,13 +14,16 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
-	 * The Calculator() constructor defines an integer to keep track of the total value. 
-	 * The integer is initialized to 0. 
+	 * The Calculator() constructor defines an integer to keep track of the total value
+	 * and action history. 
+	 * The integer and string are initialized to 0. 
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0 "; // initial string value 
 	}
 	
 	/**
@@ -37,6 +40,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + "+ " + value + " ";
 	}
 	
 	/**
@@ -45,6 +49,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + "- " + value + " ";
 	}
 	
 	/**
@@ -53,6 +58,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total*value;
+		history = history + "* " + value + " ";
 	}
 	
 	/**
@@ -61,6 +67,7 @@ public class Calculator {
 	 */
 	public void divide (int value) {
 		total = total/value;
+		history = history + "/ " + value + " ";
 	}
 	
 	/**
@@ -68,7 +75,7 @@ public class Calculator {
 	 * @return all previous actions/requests
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
 
